@@ -21,3 +21,12 @@ func ExampleBytesToString() {
 	fmt.Println(BytesToString(helloWorldBytes))
 	// Output: 48 65 6c 6c 6f 20 57 6f 72 6c 64 21
 }
+
+func ExampleStringToBytes2() {
+	fourBytes, err := StringToBytes("\n01 02\n0a ff\n")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(fourBytes)
+	// Output: [1 2 10 255]
+}

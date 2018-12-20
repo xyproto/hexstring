@@ -8,7 +8,7 @@ import (
 // StringToBytes takes a space separated string of hexadecimal bytes (like "7f")
 // and converts them to a slice of bytes.
 func StringToBytes(hexstring string) ([]byte, error) {
-	hexStrings := strings.Split(hexstring, " ")
+	hexStrings := strings.Fields(hexstring)
 	hexBytes := make([]byte, 0, len(hexStrings))
 	for _, s := range hexStrings {
 		if len(s) == 0 {
