@@ -14,7 +14,7 @@ func StringToBytes(hexstring string) ([]byte, error) {
 		if len(s) == 0 {
 			continue
 		}
-		u, err := strconv.ParseUint(s, 16, 8)
+		u, err := strconv.ParseUint(strings.TrimSpace(s), 16, 8)
 		if err != nil {
 			return hexBytes, err
 		}
