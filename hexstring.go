@@ -5,9 +5,9 @@ import (
 	"strings"
 )
 
-// HexStringToBytes takes a space separated string of hexadecimal bytes (like "7f")
+// StringToBytes takes a space separated string of hexadecimal bytes (like "7f")
 // and converts them to a slice of bytes.
-func HexStringToBytes(hexstring string) ([]byte, error) {
+func StringToBytes(hexstring string) ([]byte, error) {
 	hexStrings := strings.Split(hexstring, " ")
 	hexBytes := make([]byte, 0, len(hexStrings))
 	for _, s := range hexStrings {
@@ -23,9 +23,9 @@ func HexStringToBytes(hexstring string) ([]byte, error) {
 	return hexBytes, nil
 }
 
-// BytesToHexString converts a slice of bytes to a space sparated string
+// BytesToString converts a slice of bytes to a space sparated string
 // of hexidecimal bytes (like "7f").
-func BytesToHexString(bs []byte) string {
+func BytesToString(bs []byte) string {
 	var sb strings.Builder
 	for i, b := range bs {
 		if i > 0 {
